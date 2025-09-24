@@ -79,5 +79,5 @@ See the [LICENSE](./LICENSE) file for details.
 
 ---
 
-![[Author: Rudra Patel](https://img.shields.io/badge/author-Rudra_Patel-blue) ](https://github.com/rudra290) 
+[![Author: Rudra Patel](https://img.shields.io/badge/author-Rudra_Patel-blue) ](https://github.com/rudra290) 
 [![VSD](https://img.shields.io/badge/VSD-Program-orange?style=for-the-badge)](https://vsdiat.vlsisystemdesign.com/)
