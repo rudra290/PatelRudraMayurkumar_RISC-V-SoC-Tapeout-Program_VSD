@@ -7,12 +7,12 @@ This repository is structured day-wise, with **labs, explanations, and code exam
 
 ## 📑 Table of Contents  
 
-- [Overview] 
-- [Prerequisites]
-- [Workshop Progress]
-- [Structure](Structure)  
-- [License] 
-- [Acknowledgements] 
+- Overview
+- Prerequisites
+- Workshop Progress
+- Structure  
+- License
+- Acknowledgements
 
 ---
 
