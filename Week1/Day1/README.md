@@ -35,7 +35,7 @@ On this day, I explored the basics of **RTL design, simulation, and synthesis** 
 </details>
 
 <details>
-<summary>## 1. Introduction to Open-Source Simulator – **iverilog**  </summary>
+## 1. Introduction to Open-Source Simulator – **iverilog**
 
 In this lecture, I learned about **Verilog HDL** and its simulation using **iverilog**.  
 
