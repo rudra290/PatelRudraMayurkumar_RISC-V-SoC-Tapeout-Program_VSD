@@ -182,11 +182,12 @@ Now we use **Yosys** to synthesize our design.
    ```bash
    write_verilog good_muxx_netlist.v
    ```
+```mermaid
 flowchart LR
     A["Verilog Design\ngood_mux.v"] --> B[Yosys]
     B --> C["Read Liberty\nSky130 PDK"]
     C --> D["Synthesize\nTop Module"]
     D --> E["ABC Optimization\nMerge with Library"]
-    E --> F[Show Result]
+    E --> F["Show Result"]
     F --> G["Write Netlist\ngood_muxx_netlist.v"]
-
+```
