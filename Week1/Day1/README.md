@@ -53,5 +53,32 @@ gtkwave tb_good_mux.vcd
 ```
 in our terminal.
 to view our simulation result we use another tool named as GTK wave. It is the waveform viewer tool which shows simulation results in waveform. note that it required.vcd file to view the result.
-![Alt Text](
-gtkwave_goodmux.png)
+![Alt Text](gtkwave_goodmux.png)
+
+
+## 3. Introduction to Yosys and Logic synthesis
+
+The RTL level code is just like demo or idea which can be use to visualise the design. We need to covert it in actual hardware circuit. Their we need one synthesizer which conver the RTL level code to gate lavel. Here we need another tool name as yosys. anothe opensource tool which synthesize our RTL code.
+
+![Alt Text](yosys_flow.png)
+
+yosys convert the RTL code to netlist using liberary file. library file containing many standard cells. The standard cells we can say a pre define circuit madeup with mosfets or some gates. having the information about power consumption of the cells, temperature, delay information, area, and many other specification. the standart cell is provided by the foundry who makes our chip.
+
+The netlist is the circuit version of the our design. we can simulate the gate level circuit through iverilog and GTK wave also.
+
+By observing the library we have lots lots of standard cells having differen different logics and diffenet different specification. I observe the same mux having different different atributes, vary from slow, midium, typical, good, and many more.
+
+this are can be use as per our design specification.
+let me give you one example.
+#### steup time
+![Alt Text](setuptime.png)
+
+the setuptime is time before the clock edge input should be stable. This we have to qualify otherwise our circuit goes into metastange we can't get desired output.
+the total delay is given in figure. this can use to determine max frequency of the design.
+
+#### holdtime
+![Alt Text](holdtime.png)
+
+The holdtime is time after the output. input should be stable. this is determine by in figure. here I notice that to setisfy the hold condition I have to play with the combinatinal circuit delay. which may be effect on clock frequency also.
+
+
