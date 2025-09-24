@@ -3,13 +3,36 @@
 This repository documents **Day 1 of Week 1** in the **RISC-V Reference SoC Tapeout Program**.  
 On this day, I explored the basics of **RTL design, simulation, and synthesis** using open-source tools.  
 
----
-
 ## 📑 Table of Contents  
 
-1. [Introduction to Open-Source Simulator – **iverilog**]( Introduction-to-Open-Source-Simulator-iverilog)  
+<details>
+<summary>Click to expand</summary>
 
----
+1. [Introduction to Open-Source Simulator – iverilog](#1-introduction-to-open-source-simulator--iverilog)  
+   - What is Verilog HDL?  
+   - What is iverilog?  
+   - Simulation Flow  
+   - Verification Approaches  
+
+2. [Labs using iverilog and GTKWave](#2-labs-using-iverilog-and-gtkwave)  
+   - Cloning the Repository  
+   - Simulating a 2x1 MUX  
+   - Generating VCD Files  
+   - Viewing Results with GTKWave  
+
+3. [Introduction to Yosys and Logic Synthesis](#3-introduction-to-yosys-and-logic-synthesis)  
+   - What is Yosys?  
+   - Gate-Level Netlist  
+   - Standard Cell Libraries  
+   - Timing Parameters (Setup & Hold Time)  
+
+4. [Labs using Yosys and Sky130 PDKs](#4-labs-using-yosys-and-sky130-pdks)  
+   - RTL to Netlist Flow  
+   - Post-Synthesis Simulation  
+
+5. [Key Takeaways from Day 1](#-key-takeaways-from-day-1)  
+
+</details>
 
 ## 1. Introduction to Open-Source Simulator – **iverilog**  
 
