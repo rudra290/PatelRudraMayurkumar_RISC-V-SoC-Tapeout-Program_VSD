@@ -47,7 +47,7 @@ In this lecture, I learned about **Verilog HDL** and its simulation using **iver
 - **iverilog**: An open-source tool used for **RTL simulation** of Verilog designs.  
 
 📌 **Flow of iverilog simulation**  
-![iverilog flow](iverilog_flow.png)  
+![iverilog flow](Images/iverilog_flow.png)  
 
 To simulate a design, we need **two files**:  
 1. **Design file** – contains the circuit implementation.  
@@ -99,7 +99,7 @@ gtkwave tb_good_mux.vcd
 GTKWave is a waveform viewer used to visualize simulation results.
 
 📌 Example:
-![Alt Text](gtkwave_goodmux.png)
+![Alt Text](Images/gtkwave_goodmux.png)
 ## 3. Introduction to Yosys and Logic Synthesis
 
 The RTL code is only a behavioral description. To realize it in hardware, we use logic synthesis.
@@ -109,7 +109,7 @@ Yosys: An open-source synthesis tool that converts RTL code into a gate-level ne
 The netlist is generated using a library file containing standard cells (basic building blocks like NAND, NOR, MUX, FF).
 
 📌 Flow of Yosys synthesis
-![Alt Text](yosys_flow.png)
+![Alt Text](Images/yosys_flow.png)
 
 The standard cell library provides:
 
@@ -130,14 +130,14 @@ let me give you one example.
 
 The minimum time before the clock edge during which input must remain stable.
 If violated → metastability occurs, leading to incorrect output.
-![Alt Text](setuptime.png)
+![Alt Text](Images/setuptime.png)
 
 This determines the maximum operating frequency of the circuit.
 
 #### ✅ Hold Time
 
 The minimum time after the clock edge during which input must remain stable.
-![Alt Text](holdtime.png)
+![Alt Text](Images/holdtime.png)
 To satisfy hold conditions, we may adjust combinational path delays, which also impact clock frequency.
 
 The holdtime is time after the output. input should be stable. this is determine by in figure. here I notice that to setisfy the hold condition I have to play with the combinatinal circuit delay. which may be effect on clock frequency also.
@@ -159,7 +159,7 @@ Now we use **Yosys** to synthesize our design.
    read_liberty -lib ../sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
    ```
    ✅ This will give the result as:
-   ![Alt text](yosys_library_read.png)
+   ![Alt text](Images/yosys_library_read.png)
 3. Read the Verilog file
    ```bash
    read_verilog good_mux.v
@@ -177,7 +177,7 @@ Now we use **Yosys** to synthesize our design.
    show
    ```
    ✅ Output:
-   ![Alt text](yosys_good_mux.png)
+   ![Alt text](Images/yosys_good_mux.png)
 7. Convert netlist to Verilog format
    ```bash
    write_verilog good_muxx_netlist.v
