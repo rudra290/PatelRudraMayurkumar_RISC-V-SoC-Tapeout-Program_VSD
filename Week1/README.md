@@ -7,12 +7,12 @@ This repository is structured day-wise, with **labs, explanations, and code exam
 
 ## 📑 Table of Contents  
 
-- [Overview](Ovaerview)  
-- [Prerequisites](🛠️ Prerequisites )  
-- [Workshop Progress](#workshop-progress)  
-- [Structure](#structure)  
-- [License](#license)  
-- [Acknowledgements](#acknowledgements)  
+- [Overview] 
+- [Prerequisites]
+- [Workshop Progress]
+- [Structure](Structure)  
+- [License] 
+- [Acknowledgements] 
 
 ---
 
