@@ -7,7 +7,7 @@ This repository is structured day-wise, with **labs, explanations, and code exam
 
 ## 📑 Table of Contents  
 
-- [Overview](overview)  
+- [Overview](Overview)  
 - [Prerequisites](prerequisites)  
 - [Workshop Progress](#workshop-progress)  
 - [Structure](#structure)  
