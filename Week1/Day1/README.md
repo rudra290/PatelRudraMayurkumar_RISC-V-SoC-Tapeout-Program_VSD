@@ -1,33 +1,50 @@
-# Day 1 - Introduction to Verilog RTL design and Synthesis
+# 🌟 Day 1 – Introduction to Verilog RTL Design and Synthesis  
 
-The Reposetory is about day 1 of week 1 of RISC‑V Reference SoC Tapeout Program.
-In this day I learn about RTL design and synthesys.
+This repository documents **Day 1 of Week 1** in the **RISC-V Reference SoC Tapeout Program**.  
+On this day, I explored the basics of **RTL design, simulation, and synthesis** using open-source tools.  
 
-table of content
-1. Introduction to open-source simulator iverilog
-2. Labs using iverilog and gtkwave
-3. Introduction to Yosys and Logic synthesis
-4. Labs using Yosys and Sky130 PDKs
+---
 
-## 1. Introduction to open-source simulator iverilog
+## 📑 Table of Contents  
 
-In this lecture I learn about the verilog HDL and iverilog. Verilog is hardware discription language. which describe the behaviour of the hardwave. To language are currently exict 1. verilog. 2. VHDl. Verilog is based on C language, case sensitive language.
-iverilog is the tool which helps to simulaten the verilog code. Here I learn about the RTL simulation.
+1. [Introduction to Open-Source Simulator – **iverilog**]( Introduction-to-Open-Source-Simulator-iverilog)  
 
-The flow of the iverilog is as shown below.
-![Alt Text](iverilog_flow.png)
+---
 
-To simulate our design we need two file. 1. design file. 2. Testbench. The design file is having the code of out design and testbench file have the funcionlity to verify our design. There are two approch to verify out design. 1. teshbench 2. DUT. in testbench we simply apply our testvector and get our output and compare it with desired vectors. But in DUT. we design testbench which generate test vectors [ may having same functionality or not] and design. put in DUT. which verify our design. gives scores feedbacks 
+## 1. Introduction to Open-Source Simulator – **iverilog**  
 
-## 2. Labs using iverilog and gtkwave
+In this lecture, I learned about **Verilog HDL** and its simulation using **iverilog**.  
 
-First we have to clone our project from the github
+- **Verilog HDL**: A hardware description language (HDL) used to describe the behavior and structure of digital systems.  
+  - Influenced by C language.  
+  - Case-sensitive.  
+  - Two widely used HDLs are **Verilog** and **VHDL**.  
+
+- **iverilog**: An open-source tool used for **RTL simulation** of Verilog designs.  
+
+📌 **Flow of iverilog simulation**  
+![iverilog flow](iverilog_flow.png)  
+
+To simulate a design, we need **two files**:  
+1. **Design file** – contains the circuit implementation.  
+2. **Testbench file** – applies input test vectors and verifies outputs.  
+
+### Approaches to verification:
+- **Direct Testbench**: Apply test vectors and compare results.  
+- **DUT (Design Under Test)**: Testbench generates inputs automatically and checks DUT outputs, often giving feedback or scores.  
+
+---
+
+## 2. Labs using **iverilog** and **GTKWave**  
+
+### 🔹 Step 1: Clone the repository  
 ```bash
 git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
-Clone this reposetory in our project. It have standard cells of sky130 and some projects for our demo.
+This repo contains Sky130 standard cells and demo designs.
 
+### 🔹 Step 2: Simulate a 2x1 MUX
 Then install the required softwares as week 0.
 To simulate 2x1 mux we type
 ```bash 
@@ -39,23 +56,26 @@ to execute the simulation we type
 ```bash
 ./a.out
 ```
-which gives one tb_good_mux.vcd file
-Note: The vcd file named as Value Change Dump Contains metadata like the date the file was created, the version of the simulator, and the timescale used in the simulation. This is generate if we include two lines
+This generates a VCD (Value Change Dump) file, e.g., tb_good_mux.vcd.
+The VCD file contains metadata such as date, simulator version, and timescale.
+
+To enable waveform dumping, include these in the testbench:
 ```verilog
 $dumpfile("tb_good_mux.vcd");
 $dumpvars(0, tb_good_mux);
 ```
 in initial block of the testbench
 
-to invoke this we type
+### 🔹 Step 3: View Waveform with GTKWave
+in our terminal.
+to view our simulation result we use another tool named as GTK wave. It is the waveform viewer tool which shows simulation results in waveform. note that it required.vcd file to view the result.
 ```bash
 gtkwave tb_good_mux.vcd
 ```
-in our terminal.
-to view our simulation result we use another tool named as GTK wave. It is the waveform viewer tool which shows simulation results in waveform. note that it required.vcd file to view the result.
+GTKWave is a waveform viewer used to visualize simulation results.
+
+📌 Example:
 ![Alt Text](gtkwave_goodmux.png)
-
-
 ## 3. Introduction to Yosys and Logic synthesis
 
 The RTL level code is just like demo or idea which can be use to visualise the design. We need to covert it in actual hardware circuit. Their we need one synthesizer which conver the RTL level code to gate lavel. Here we need another tool name as yosys. anothe opensource tool which synthesize our RTL code.
