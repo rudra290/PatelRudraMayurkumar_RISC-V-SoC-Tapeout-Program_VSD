@@ -81,4 +81,4 @@ the total delay is given in figure. this can use to determine max frequency of t
 
 The holdtime is time after the output. input should be stable. this is determine by in figure. here I notice that to setisfy the hold condition I have to play with the combinatinal circuit delay. which may be effect on clock frequency also.
 
-
+## 4. Labs using Yosys and Sky130 PDKs
