@@ -142,12 +142,50 @@ To satisfy hold conditions, we may adjust combinational path delays, which also 
 
 The holdtime is time after the output. input should be stable. this is determine by in figure. here I notice that to setisfy the hold condition I have to play with the combinatinal circuit delay. which may be effect on clock frequency also.
 
-## 4. Labs using Yosys and Sky130 PDKs
-Now we use yosys to synthesize our design 
-1. Invoke yosys by typing yosys in terminal
-2. load the library by typing
+### 4. Labs using Yosys and Sky130 PDKs  
+
+Now we use **Yosys** to synthesize our design.  
+
+---
+
+### 🔹 Steps  
+
+1. **Invoke Yosys**  
+   ```bash
+   yosys
+   ```
+2. Load the library
    ```bash
    read_liberty -lib ../sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
    ```
-   This will give result as
+   ✅ This will give the result as:
    ![Alt text](yosys_library_read.png)
+3. Read the Verilog file
+   ```bash
+   read_verilog good_mux.v
+   ```
+4. Synthesize the top module
+   ```bash
+    synth -top good_mux
+   ```
+5. Merge with library
+   ```bash
+   abc -liberty ../sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+   ```
+6. View the result
+   ```bash
+   show
+   ```
+   ✅ Output:
+   ![Alt text](yosys_good_mux.png)
+7. Convert netlist to Verilog format
+   ```bash
+   write_verilog good_muxx_netlist.v
+   ```
+flowchart LR
+    A[Verilog Design<br>(good_mux.v)] --> B[Yosys]
+    B --> C[Read Liberty<br>Sky130 PDK]
+    C --> D[Synthesize Top Module]
+    D --> E[ABC Optimization<br>Merge with Library]
+    E --> F[Show Result]
+    F --> G[Write Netlist<br>(good_muxx_netlist.v)]
