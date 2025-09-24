@@ -143,3 +143,11 @@ To satisfy hold conditions, we may adjust combinational path delays, which also 
 The holdtime is time after the output. input should be stable. this is determine by in figure. here I notice that to setisfy the hold condition I have to play with the combinatinal circuit delay. which may be effect on clock frequency also.
 
 ## 4. Labs using Yosys and Sky130 PDKs
+Now we use yosys to synthesize our design 
+1. Invoke yosys by typing yosys in terminal
+2. load the library by typing
+   ```bash
+   read_liberty -lib ../sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+   ```
+   This will give result as
+   ![Alt text](yosys_library_read.png)
