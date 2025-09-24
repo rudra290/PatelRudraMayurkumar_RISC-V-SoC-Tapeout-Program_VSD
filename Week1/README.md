@@ -7,8 +7,8 @@ This repository is structured day-wise, with **labs, explanations, and code exam
 
 ## 📑 Table of Contents  
 
-- [Overview](#overview)  
-- [Prerequisites](#prerequisites)  
+- [Overview](overview)  
+- [Prerequisites](prerequisites)  
 - [Workshop Progress](#workshop-progress)  
 - [Structure](#structure)  
 - [License](#license)  
@@ -67,8 +67,8 @@ See the [LICENSE](./LICENSE) file for details.
 
 ## 🙌 Acknowledgements  
 
-- [Kunal Ghosh](https://www.linkedin.com/in/kunal-ghosh-vlsisystemdesign-com-28084836/) – Workshop Mentor  
-- [Shon Taware](https://www.linkedin.com/in/shon-taware/) – Contributions to Sky130 RTL design learning  
+-  [**Kunal Ghosh**](https://github.com/kunalg123)  – Workshop Mentor  
+- [**Shon Taware**](https://www.linkedin.com/in/shon-taware/) – Contributions to Sky130 RTL design learning  
 - Open-source tool developers (**Yosys, Icarus Verilog, GTKWave, Sky130 PDK**)  
 
 ---
