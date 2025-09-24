@@ -182,6 +182,7 @@ Now we use **Yosys** to synthesize our design.
    ```bash
    write_verilog good_muxx_netlist.v
    ```
+---
 flowchart LR
     A[Verilog Design<br>(good_mux.v)] --> B[Yosys]
     B --> C[Read Liberty<br>Sky130 PDK]
@@ -189,3 +190,4 @@ flowchart LR
     D --> E[ABC Optimization<br>Merge with Library]
     E --> F[Show Result]
     F --> G[Write Netlist<br>(good_muxx_netlist.v)]
+---
