@@ -34,7 +34,8 @@ On this day, I explored the basics of **RTL design, simulation, and synthesis** 
 
 </details>
 
-## 1. Introduction to Open-Source Simulator – **iverilog**  
+<details>
+<summary>## 1. Introduction to Open-Source Simulator – **iverilog**  </summary>
 
 In this lecture, I learned about **Verilog HDL** and its simulation using **iverilog**.  
 
@@ -57,7 +58,7 @@ To simulate a design, we need **two files**:
 - **DUT (Design Under Test)**: Testbench generates inputs automatically and checks DUT outputs, often giving feedback or scores.  
 
 ---
-
+</details>
 ## 2. Labs using **iverilog** and **GTKWave**  
 
 ### 🔹 Step 1: Clone the repository  
