@@ -1,44 +1,67 @@
-Day 4 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
+# 🧠 Day 4 - GLS, Blocking vs Non-blocking, and Synthesis-Simulation Mismatch
 
-TOC
+---
 
-GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+## 📚 Table of Contents
 
-Labs on GLS and Synthesis-Simulation Mismatch
+1. [GLS, Synthesis-Simulation Mismatch, and Blocking/Non-blocking Statements](#1-gls-synthesis-simulation-mismatch-and-blockingnon-blocking-statements)  
+2. [Labs on GLS and Synthesis-Simulation Mismatch](#2-labs-on-gls-and-synthesis-simulation-mismatch)  
+3. [Labs on Synth-Sim Mismatch for Blocking Statement](#3-labs-on-synth-sim-mismatch-for-blocking-statement)
 
-Labs on synth-sim mismatch for blocking statement
+---
 
-1. GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+## 1. GLS, Synthesis-Simulation Mismatch and Blocking/Non-blocking Statements
 
-What is GLS ? 
-Why GLS?
+### 🔍 What is GLS?
 
-SynthesisSimulationMismatch
-Missing sensitivity list
-caveates with Blocking statements
-![Alt text](GLS_flow.png)
+**GLS** stands for **Gate-Level Simulation**.
 
-2. Labs on GLS and Synthesis-Simulation Mismatch
+It is a form of simulation that uses the **gate-level netlist** (typically post-synthesis or post-layout) instead of RTL.
 
-how to get GLS ? by yosys genrate netlist and the simlate with same testbench
+### ✅ Why GLS?
 
-In Yosys, the -noattr option is used with the write_verilog command to create a cleaner output netlist.
+- To **verify** the design functionality after synthesis.
+- To catch mismatches between **RTL simulation** and **synthesized netlist**.
+- To ensure **timing correctness** (especially in post-layout GLS with SDF).
+  
+![GLS Flow](GLS_flow.png)
 
-It removes all synthesis attributes (like (* keep *), (* full_case *), etc.) from the generated Verilog file.
+---
 
-Why use it?
+### ⚠️ Synthesis-Simulation Mismatch
 
-To produce a cleaner, more readable netlist.
+Common causes of mismatches between RTL and synthesized netlist simulations:
 
-To improve compatibility with downstream tools that might not understand Yosys-specific attributes.
+- **Missing sensitivity list** in combinational logic.
+- **Incorrect use of blocking (`=`) vs non-blocking (`<=`)** assignments.
+- **Unintended latch inference** or synthesis pruning.
 
-Example:
+---
 
-```Tcl
+### 🔁 Caveats with Blocking Statements
 
-# Writes the netlist without any attributes
+Improper use of **blocking assignments** can lead to **synth-sim mismatches**, especially in combinational blocks.
+
+Use **non-blocking** (`<=`) for sequential logic and **blocking** (`=`) with care in combinational logic.
+
+---
+
+## 2. 🧪 Labs on GLS and Synthesis-Simulation Mismatch
+
+### 💡 How to get GLS?
+
+Use **Yosys** to generate a netlist, and simulate it with the **same testbench** used for RTL.
+
+#### 📦 Yosys Tip:
+
+To create a cleaner, more readable netlist, use the `-noattr` option:
+
+```tcl
 write_verilog -noattr synthesized_design.v
 ```
+-- This removes all synthesis attributes like (* keep *), (* full_case *), etc.
+-- Improves readability and downstream compatibility.
+
 Labs : 
 
 ternary operator
@@ -80,4 +103,5 @@ explainination
 ![Alt text](Images/blo_cav.png)
 ![Alt text](Images/blo_cav_net.png)
 ![Alt text](Images/blo_cav_gls.png)
+
 
