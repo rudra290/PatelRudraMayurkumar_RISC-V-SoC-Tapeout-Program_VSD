@@ -5,7 +5,7 @@
 ## 📚 Table of Contents
 
 1. [GLS, Synthesis-Simulation Mismatch, and Blocking/Non-blocking Statements](#1-gls-synthesis-simulation-mismatch-and-blockingnon-blocking-statements)  
-2. [Labs on GLS and Synthesis-Simulation Mismatch](#2-labs-on-gls-and-synthesis-simulation-mismatch)  
+2. [Labs on GLS and Synthesis-Simulation Mismatch](#2-🧪-Labs-on-GLS-and-Synthesis-Simulation-Mismatch)  
 3. [Labs on Synth-Sim Mismatch for Blocking Statement](#3-labs-on-synth-sim-mismatch-for-blocking-statement)
 
 ---
@@ -140,5 +140,6 @@ In this code:
 
 
 💡 Always verify your design at both RTL and gate level to catch synthesis-related issues early.
+
 
 
