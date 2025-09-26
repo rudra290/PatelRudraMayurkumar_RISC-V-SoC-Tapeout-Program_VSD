@@ -77,4 +77,7 @@ endmodule
 ```
 explainination
 
-![Alt text](Images/blo.png)
+![Alt text](Images/blo_cav.png)
+![Alt text](Images/blo_cav_net.png)
+![Alt text](Images/blo_cav_gls.png)
+
