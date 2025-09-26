@@ -43,8 +43,8 @@ This workshop is designed for **students, hobbyists, and engineers** who want to
 | **Day 1** | <a href="Day1" style="font-weight: bold; color: orange; text-decoration: none;">Introduction to Verilog RTL Design & Synthesis</a> | ✅ Completed |
 | **Day 2** | <a href="Day2" style="font-weight: bold; color: orange; text-decoration: none;">Timing Libraries, Synthesis Approaches, Flip-Flop Coding</a> | ✅ Completed |
 | **Day 3** | <a href="Day3" style="font-weight: bold; color: orange; text-decoration: none;">Combinational & Sequential Optimization</a> |  ✅ Completed |
-| **Day 4** | Gate-Level Simulation (GLS), Blocking vs. Non-Blocking, Mismatch | ⏳ In Progress (Lectures done, labs pending) |
-| **Day 5** | Optimization in Synthesis | ⏳ Pending |
+| **Day 4** | <a href="Day4" style="font-weight: bold; color: orange; text-decoration: none;">Gate-Level Simulation (GLS), Blocking vs. Non-Blocking, Mismatch</a> | ✅ Completed |
+| **Day 5** | Optimization in Synthesis | ⏳ In Progress (Lectures done, labs pending) |
 
 ---
 
