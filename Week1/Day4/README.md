@@ -46,7 +46,7 @@ Use **non-blocking** (`<=`) for sequential logic and **blocking** (`=`) with car
 
 ---
 
-## 2. 🧪 Labs on GLS and Synthesis-Simulation Mismatch
+## 2. Labs on GLS and Synthesis-Simulation Mismatch
 
 ### 💡 How to get GLS?
 
@@ -140,6 +140,7 @@ In this code:
 
 
 💡 Always verify your design at both RTL and gate level to catch synthesis-related issues early.
+
 
 
 
