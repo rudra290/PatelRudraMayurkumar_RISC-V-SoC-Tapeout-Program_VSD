@@ -62,14 +62,20 @@ write_verilog -noattr synthesized_design.v
 - This removes all synthesis attributes like (* keep *), (* full_case *), etc.
 - Improves readability and downstream compatibility.
 
-Labs : 
 
-ternary operator
-![Alt text](Images/ter_wave.png)
-![Alt text](Images/ter_net.png)
-![Alt text](Images/ter_wave_gls.png)
 
-bad mux having code 
+### ✅ Ternary Operator Example
+#### RTL Simulation:
+![Ternary RTL Waveform](Images/ter_wave.png)
+
+#### Synthesized Netlist:
+![Ternary Netlist](Images/ter_net.png)
+
+#### GLS Waveform:
+![Ternary GLS Waveform](Images/ter_wave_gls.png)
+
+### ❌ Bad Mux Example
+
 ```verilog
 module bad_mux (input i0 , input i1 , input sel , output reg y);
 always @ (sel)
@@ -81,15 +87,20 @@ begin
 end
 endmodule
 ```
+#### RTL Simulation:
+![Bad Mux RTL](Images/bad_mux.png)
 
-![Alt text](Images/bad_mux.png)
-![Alt text](Images/bad_mux_gls.png)
+#### GLS:
+![Bad Mux GLS](Images/bad_mux_gls.png)
+
+#### Issue:
+Incorrect sensitivity list! always @ (sel) ignores changes to i0 and i1.
 
 ---
 
-3. Labs on synth-sim mismatch for blocking statement
-blocking caveat
-code :
+## 3. ⚠️ Labs on Synth-Sim Mismatch for Blocking Statement
+
+### 🔁 Blocking Caveat Example
 ```verilog
 module blocking_caveat (input a , input b , input  c, output reg d); 
 reg x;
@@ -100,11 +111,34 @@ begin
 end
 endmodule
 ```
-explainination
+### 💡 Explanation:
 
-![Alt text](Images/blo_cav.png)
-![Alt text](Images/blo_cav_net.png)
-![Alt text](Images/blo_cav_gls.png)
+In this code:
 
+- d is calculated before x is updated.
+
+- In simulation, this executes sequentially and might give wrong results.
+
+- But synthesis tools optimize it differently, possibly creating a mismatch.
+
+#### RTL Simulation:
+![Blocking Caveat RTL](Images/blo_cav.png)
+
+#### Netlist View:
+![Blocking Caveat Netlist](Images/blo_cav_net.png)
+
+#### GLS Result:
+![Blocking Caveat GLS](Images/blo_cav_gls.png)
+
+## ✅ Summary
+
+| Concept               | Correct Practice                     | Potential Issue                      |
+|-----------------------|--------------------------------------|--------------------------------------|
+| Sensitivity list      | Use `always @(*)` for combinational logic | Missing signals can cause mismatches |
+| Blocking vs Non-blocking | Use `=` in comb, `<=` in seq         | Blocking order matters               |
+| GLS                   | Run after synthesis to verify correctness | Can expose mismatches                |
+
+
+💡 Always verify your design at both RTL and gate level to catch synthesis-related issues early.
 
 
