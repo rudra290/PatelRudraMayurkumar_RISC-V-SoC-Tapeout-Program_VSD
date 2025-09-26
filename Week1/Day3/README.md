@@ -152,6 +152,8 @@ Optimization:
 📉 Whole module reduces to constant 0.
 
 ![Alt Text](Images/lab6_muloc2.png)
+![Alt Text](Images/lab6_muloc2_2.png)
+
 
 ## 3. Sequential Logic Optimizations  
 
@@ -219,5 +221,6 @@ By default, it cleans **dangling wires and cells** that no longer affect the des
 ```tcl
 opt_clean -purge
 ```
+
 
 
