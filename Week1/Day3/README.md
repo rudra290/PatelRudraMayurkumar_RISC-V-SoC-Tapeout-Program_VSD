@@ -83,7 +83,7 @@ Optimization:
 📉 Reduced from nested MUX tree to AND gate chain.
 
 ![Alt Text](Images/lab3_oc3.png)
-###🔹 Lab 4 – Complex Expression
+### 🔹 Lab 4 – Complex Expression
 ```verilog
 module opt_check4 (input a , input b , input c , output y);
  assign y = a?(b?(a & c ):c):(!c);
@@ -124,7 +124,7 @@ Optimization:
 📉 Multiple submodules collapsed into single OR-AND expression.
 
 ![Alt Text](Images/lab5_muloc.png)
-🔹 Lab 6 – Multiple Submodules (with Optimizable Nets)
+### 🔹 Lab 6 – Multiple Submodules (with Optimizable Nets)
 
 ```verilog
 
@@ -221,6 +221,7 @@ By default, it cleans **dangling wires and cells** that no longer affect the des
 ```tcl
 opt_clean -purge
 ```
+
 
 
 
