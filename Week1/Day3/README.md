@@ -41,31 +41,61 @@ y = b | 0 → y = b
 Gates that never affect the output are removed.  
 
 ---
-Labs : 
+Below are small Verilog examples that illustrate how **optimizations simplify circuits**.  
+
+---
+
+### 🔹 Lab 1 – Ternary Reduction
 ```verilog
 module opt_check (input a , input b , output y);
 	assign y = a?b:0;
 endmodule
 ```
+Optimization:
+
+- Expression → y = a & b
+📉 Reduced from MUX (2-to-1) to single AND gate.
+
 ![Alt Text](Images/Lab1.png)
+
+### 🔹 Lab 2 – Constant Simplification
 ```verilog
 module opt_check2 (input a , input b , output y);
 	assign y = a?1:b;
 endmodule
 ```
+Optimization:
+
+- Expression → y = a | b
+📉 Reduced from MUX to OR gate.
+
 ![Alt Text](Images/Lab2.png)
+
+### 🔹 Lab 3 – Nested Conditions
 ```verilog
 module opt_check3 (input a , input b, input c , output y);
 	assign y = a?(c?b:0):0;
 endmodule
 ```
+Optimization:
+
+- Expression → y = a & c & b
+📉 Reduced from nested MUX tree to AND gate chain.
+
 ![Alt Text](Images/lab3_oc3.png)
+###🔹 Lab 4 – Complex Expression
 ```verilog
 module opt_check4 (input a , input b , input c , output y);
  assign y = a?(b?(a & c ):c):(!c);
  endmodule
 ```
+Optimization:
+
+- Simplifies to → y = (a & b & c) | (!a & !c) | (a & !b & c)
+- Yosys further reduces depending on conditions.
+📉 From 4-level nested logic → minimal SOP form.
 ![Alt Text](Images/Lab4_oc4.png)
+### 🔹 Lab 5 – Multiple Submodules (with Redundant Logic)
 ```verilog
 module sub_module1(input a , input b , output y);
  assign y = a & b;
@@ -86,7 +116,16 @@ assign y = c | (b & n1);
 
 endmodule
 ```
+Optimization:
+
+- n1 = a & 1 → a
+- n2 = a ^ 0 → a
+- Final → y = c | (a & b)
+📉 Multiple submodules collapsed into single OR-AND expression.
+
 ![Alt Text](Images/lab5_muloc.png)
+🔹 Lab 6 – Multiple Submodules (with Optimizable Nets)
+
 ```verilog
 
 module sub_module(input a , input b , output y);
@@ -106,6 +145,12 @@ sub_module U4 (.a(n3), .b(n1) , .y(y));
 
 endmodule
 ```
+Optimization:
+
+- n1 = a & 0 → 0
+- y = n3 & 0 → 0
+📉 Whole module reduces to constant 0.
+
 ![Alt Text](Images/lab6_muloc2.png)
 
 ## 3. Sequential Logic Optimizations  
@@ -174,4 +219,5 @@ By default, it cleans **dangling wires and cells** that no longer affect the des
 ```tcl
 opt_clean -purge
 ```
+
 
