@@ -47,25 +47,25 @@ module opt_check (input a , input b , output y);
 	assign y = a?b:0;
 endmodule
 ```
-![Alt Text](Lab1.png)
+![Alt Text](Images/Lab1.png)
 ```verilog
 module opt_check2 (input a , input b , output y);
 	assign y = a?1:b;
 endmodule
 ```
-![Alt Text](Lab2.png)
+![Alt Text](Images/Lab2.png)
 ```verilog
 module opt_check3 (input a , input b, input c , output y);
 	assign y = a?(c?b:0):0;
 endmodule
 ```
-![Alt Text](lab3_oc3.png)
+![Alt Text](Images/lab3_oc3.png)
 ```verilog
 module opt_check4 (input a , input b , input c , output y);
  assign y = a?(b?(a & c ):c):(!c);
  endmodule
 ```
-![Alt Text](Lab4_oc4.png)
+![Alt Text](Images/Lab4_oc4.png)
 ```verilog
 module sub_module1(input a , input b , output y);
  assign y = a & b;
@@ -86,7 +86,7 @@ assign y = c | (b & n1);
 
 endmodule
 ```
-![Alt Text](lab5_muloc.png)
+![Alt Text](Images/lab5_muloc.png)
 ```verilog
 
 module sub_module(input a , input b , output y);
@@ -106,7 +106,7 @@ sub_module U4 (.a(n3), .b(n1) , .y(y));
 
 endmodule
 ```
-![Alt Text](lab6_muloc2.png)
+![Alt Text](Images/lab6_muloc2.png)
 
 ## 3. Sequential Logic Optimizations  
 
@@ -174,3 +174,4 @@ By default, it cleans **dangling wires and cells** that no longer affect the des
 ```tcl
 opt_clean -purge
 ```
+
