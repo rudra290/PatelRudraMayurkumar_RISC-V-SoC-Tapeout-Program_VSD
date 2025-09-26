@@ -54,6 +54,7 @@ endmodule
 Optimization:
 
 - Expression → y = a & b
+
 📉 Reduced from MUX (2-to-1) to single AND gate.
 
 ![Alt Text](Images/Lab1.png)
@@ -67,6 +68,7 @@ endmodule
 Optimization:
 
 - Expression → y = a | b
+
 📉 Reduced from MUX to OR gate.
 
 ![Alt Text](Images/Lab2.png)
@@ -80,6 +82,7 @@ endmodule
 Optimization:
 
 - Expression → y = a & c & b
+
 📉 Reduced from nested MUX tree to AND gate chain.
 
 ![Alt Text](Images/lab3_oc3.png)
@@ -93,6 +96,7 @@ Optimization:
 
 - Simplifies to → y = (a & b & c) | (!a & !c) | (a & !b & c)
 - Yosys further reduces depending on conditions.
+
 📉 From 4-level nested logic → minimal SOP form.
 ![Alt Text](Images/Lab4_oc4.png)
 ### 🔹 Lab 5 – Multiple Submodules (with Redundant Logic)
@@ -121,6 +125,7 @@ Optimization:
 - n1 = a & 1 → a
 - n2 = a ^ 0 → a
 - Final → y = c | (a & b)
+
 📉 Multiple submodules collapsed into single OR-AND expression.
 
 ![Alt Text](Images/lab5_muloc.png)
@@ -149,6 +154,7 @@ Optimization:
 
 - n1 = a & 0 → 0
 - y = n3 & 0 → 0
+
 📉 Whole module reduces to constant 0.
 
 ![Alt Text](Images/lab6_muloc2.png)
@@ -170,7 +176,114 @@ Sequential circuits introduce **flip-flops and state machines**. Optimizations i
 - Move registers across combinational logic to **balance delays** and improve timing.  
 
 ### 🔹 Cloning  
-- Duplicate a register close to multiple fan-out paths to **reduce load** and improve timing closure.  
+- Duplicate a register close to multiple fan-out paths to **reduce load** and improve timing closure.
+
+### Lab 7: Flip-Flop with a Constant High Input
+
+```verilog
+module dff_const1(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b0;
+	else
+		q <= 1'b1;
+end
+
+endmodule
+```
+- Optimization: Synthesizes to a single D-flip-flop with its D-input tied high (VCC), as the data is always 1 after reset.
+![Alt text](Images/lab7.png)
+
+### Lab 8: Redundant Flip-Flop Optimized to a Constant
+```verilog
+module dff_const2(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b1;
+	else
+		q <= 1'b1;
+end
+
+endmodule
+```
+- Optimization: The flip-flop is completely removed. The tool sees the output is always 1 and ties the output q directly to VCC.
+
+![Alt Text](Images/lab8.png)
+
+### Lab 9: 2-Bit Shift Register with Asynchronous Set/Reset
+
+```verilog
+module dff_const3(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b0;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+```
+- Optimization: Implements a 2-flop shift register. q1's input is tied high, and q's input is fed by q1's output. The reset values are set accordingly.
+![Alt Text](Images/Lab9.png)
+
+### Lab 10: Redundant 2-Stage Logic Optimized Away
+```verilog
+module dff_const4(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b1;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+```
+- Optimization: All sequential logic is removed. The tool determines the output q is always 1 and ties it directly to VCC.
+![Alt Text](Images/Lab10.png)
+
+### Lab 11: Standard 2-Bit Shift Register with Constant Input
+```
+module dff_const5(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b0;
+		q1 <= 1'b0;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+```
+- Optimization: Creates a simple 2-bit shift register with a constant 1 being shifted in. Both flops are reset to 0.
+![Alt Text](Images/Lab11.png)
 
 ---
 
@@ -183,6 +296,48 @@ When a register’s output is **never observed** (unused in final circuit), synt
 - Reduce power and area by eliminating unnecessary storage elements.  
 
 This process is called **register pruning**.  
+
+### Lab 12: Counter Pruning for a Single-Bit Output
+```verilog
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = count[0];
+
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+end
+
+endmodule
+```
+#### Optimization Analysis ⚙️
+The synthesis tool detects that the upper two bits, count[2] and count[1], have no impact on the output q. These "un-used" flip-flops are pruned (removed). Since count[0] simply toggles every clock cycle (0, 1, 0, 1...), the entire 3-bit counter is optimized down to a single toggle flip-flop.
+
+![Alt Text](Images/Lab12.png)
+![Alt Text](Images/Lab12_1.png)
+
+### Lab 13: Counter with Full-Width State Decoder
+```verilog
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = (count[2:0] == 3'b100);
+
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+end
+
+endmodule
+```
+#### Optimization Analysis ⚙️
+In this case, all three bits (count[2], count[1], and count[0]) are required to evaluate the condition (count == 3'b100). Because all bits are used by the comparator logic, no registers can be pruned. The tool synthesizes the full 3-bit counter along with the necessary combinational logic (a decoder) to detect the specific value.
+![Alt Text](Images/Lab13.png)
 
 ---
 
@@ -221,6 +376,7 @@ By default, it cleans **dangling wires and cells** that no longer affect the des
 ```tcl
 opt_clean -purge
 ```
+
 
 
 
