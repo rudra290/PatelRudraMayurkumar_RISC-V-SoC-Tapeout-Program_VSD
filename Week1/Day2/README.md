@@ -57,7 +57,7 @@ In **hierarchical synthesis**, each module is synthesized independently, preserv
 - ✅ Easier debugging and signal tracing  
 - ✅ Best suited for **large, multi-person projects**  
 
-![Alt Text](Images/Hierarchical.png)  
+![Alt Text](Images/Hierarchical .png)  
 
 ---
 
@@ -71,7 +71,7 @@ In **flat synthesis**, the hierarchy is dissolved into one large module for glob
 - ❌ Harder debugging (loss of hierarchy)  
 - ✅ Good for **smaller or performance-critical designs**  
 
-![Alt Text](Images/flat.png)  
+![Alt Text](Images/Flat.png)  
 
 ---
 
@@ -160,4 +160,5 @@ Instead of costly multiplication, replicate bits to form result aa.
 - Flat synthesis provides global optimization but at the cost of compilation time and debug complexity.
 - Efficient flop coding ensures stability and synchronization, with reset strategy tailored to design.
 - Optimization tricks (like replacing multipliers with shifts) help save area and improve performance.
+
 
