@@ -22,10 +22,10 @@ We can choose the appropriate cell/library according to the design requirements.
 ---
 
 ### 📷 Example: Power vs Leakage
-![Alt Text](a2111o.png)  
+![Alt Text](Images/a2111o.png)  
 *Different combinations of inputs and PVT variations lead to different leakage and power consumption.*  
 
-![Alt Text](and2.png)  
+![Alt Text](Images/and2.png)  
 *Same AND gate implemented with varying area trade-offs.*  
 
 ---
@@ -57,7 +57,7 @@ In **hierarchical synthesis**, each module is synthesized independently, preserv
 - ✅ Easier debugging and signal tracing  
 - ✅ Best suited for **large, multi-person projects**  
 
-![Alt Text](Hierarchical.png)  
+![Alt Text](Images/Hierarchical.png)  
 
 ---
 
@@ -71,7 +71,7 @@ In **flat synthesis**, the hierarchy is dissolved into one large module for glob
 - ❌ Harder debugging (loss of hierarchy)  
 - ✅ Good for **smaller or performance-critical designs**  
 
-![Alt Text](flat.png)  
+![Alt Text](Images/flat.png)  
 
 ---
 
@@ -114,9 +114,9 @@ endmodule
 ```
 
 #### 📷 Waveform:
-![Alt Text](dff_async.png)
+![Alt Text](Images/dff_async.png)
 #### 📷 Synthesis Output:
-![Alt Text](dff_async_syn.png)
+![Alt Text](Images/dff_async_syn.png)
 
 ### 🔹 synchronus reset
 ```verilog
@@ -129,9 +129,9 @@ module dff_syncres (input clk, input async_reset, input sync_reset, input d, out
 endmodule
 ```
 #### 📷 Waveform:
-![Alt Text](dff_sync.png)
+![Alt Text](Images/dff_sync.png)
 #### 📷 Synthesis Output:
-![Alt Text](dff_sync_syn.png)
+![Alt Text](Images/dff_sync_syn.png)
 
 ## 4. Interesting Optimization Techniques
 
@@ -142,16 +142,16 @@ Optimizations in HDL often come from replacing costly arithmetic operations with
 - Multiplication by 2 = Left shift by 1
 - Division by 2 = Right shift by 1
 #### 📷 Cell and Result:
-   ![Alt teax](mul2_cell.png)
-   ![Alt tetx](mul2.png)
+   ![Alt teax](Images/mul2_cell.png)
+   ![Alt tetx](Images/mul2.png)
    
 🔹 Example: Multiply by 9 (3-bit input a[2:0])
 
 Instead of costly multiplication, replicate bits to form result aa.
 
 #### 📷 Cell and Result:
-   ![Alt text](mult8_cell.png)
-   ![Alt text](mult8.png)
+   ![Alt text](Images/mult8_cell.png)
+   ![Alt text](Images/mult8.png)
    
 ✅ Summary
 
@@ -160,3 +160,4 @@ Instead of costly multiplication, replicate bits to form result aa.
 - Flat synthesis provides global optimization but at the cost of compilation time and debug complexity.
 - Efficient flop coding ensures stability and synchronization, with reset strategy tailored to design.
 - Optimization tricks (like replacing multipliers with shifts) help save area and improve performance.
+
