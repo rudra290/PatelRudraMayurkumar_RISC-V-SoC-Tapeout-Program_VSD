@@ -98,7 +98,7 @@ Incorrect sensitivity list! always @ (sel) ignores changes to i0 and i1.
 
 ---
 
-## 3. ⚠️ Labs on Synth-Sim Mismatch for Blocking Statement
+## 3. Labs on Synth-Sim Mismatch for Blocking Statement
 
 ### 🔁 Blocking Caveat Example
 ```verilog
@@ -140,6 +140,7 @@ In this code:
 
 
 💡 Always verify your design at both RTL and gate level to catch synthesis-related issues early.
+
 
 
 
