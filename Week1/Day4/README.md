@@ -42,9 +42,9 @@ write_verilog -noattr synthesized_design.v
 Labs : 
 
 ternary operator
-![Alt text](ter_wave.png)
-![Alt text](ter_net.png)
-![Alt text](ter_wave_gls.png)
+![Alt text](Images/ter_wave.png)
+![Alt text](Images/ter_net.png)
+![Alt text](Images/ter_wave_gls.png)
 
 bad mux having code 
 ```verilog
@@ -59,7 +59,22 @@ end
 endmodule
 ```
 
-![Alt text](bad_mux.png)
-![Alt text](bad_mux_gls.png)
+![Alt text](Images/bad_mux.png)
+![Alt text](Images/bad_mux_gls.png)
 
 3. Labs on synth-sim mismatch for blocking statement
+blocking caveat
+code :
+```verilog
+module blocking_caveat (input a , input b , input  c, output reg d); 
+reg x;
+always @ (*)
+begin
+	d = x & c;
+	x = a | b;
+end
+endmodule
+```
+explainination
+
+![Alt text](Images/blo.png)
