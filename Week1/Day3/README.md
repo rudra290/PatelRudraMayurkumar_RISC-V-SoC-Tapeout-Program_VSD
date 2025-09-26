@@ -41,6 +41,72 @@ y = b | 0 → y = b
 Gates that never affect the output are removed.  
 
 ---
+Labs : 
+```verilog
+module opt_check (input a , input b , output y);
+	assign y = a?b:0;
+endmodule
+```
+![Alt Text](Lab1.png)
+```verilog
+module opt_check2 (input a , input b , output y);
+	assign y = a?1:b;
+endmodule
+```
+![Alt Text](Lab2.png)
+```verilog
+module opt_check3 (input a , input b, input c , output y);
+	assign y = a?(c?b:0):0;
+endmodule
+```
+![Alt Text](lab3_oc3.png)
+```verilog
+module opt_check4 (input a , input b , input c , output y);
+ assign y = a?(b?(a & c ):c):(!c);
+ endmodule
+```
+![Alt Text](Lab4_oc4.png)
+```verilog
+module sub_module1(input a , input b , output y);
+ assign y = a & b;
+endmodule
+
+module sub_module2(input a , input b , output y);
+ assign y = a^b;
+endmodule
+
+module multiple_module_opt(input a , input b , input c , input d , output y);
+wire n1,n2,n3;
+
+sub_module1 U1 (.a(a) , .b(1'b1) , .y(n1));
+sub_module2 U2 (.a(n1), .b(1'b0) , .y(n2));
+sub_module2 U3 (.a(b), .b(d) , .y(n3));
+
+assign y = c | (b & n1); 
+
+endmodule
+```
+![Alt Text](lab5_muloc.png)
+```verilog
+
+module sub_module(input a , input b , output y);
+ assign y = a & b;
+endmodule
+
+
+
+module multiple_module_opt2(input a , input b , input c , input d , output y);
+wire n1,n2,n3;
+
+sub_module U1 (.a(a) , .b(1'b0) , .y(n1));
+sub_module U2 (.a(b), .b(c) , .y(n2));
+sub_module U3 (.a(n2), .b(d) , .y(n3));
+sub_module U4 (.a(n3), .b(n1) , .y(y));
+
+
+endmodule
+```
+![Alt Text](lab6_muloc2.png)
 
 ## 3. Sequential Logic Optimizations  
 
@@ -88,4 +154,23 @@ flowchart TD
   C --> C4[Retiming]
   C --> D[Remove Unused Outputs]
   D --> E[Optimized Netlist]
+```
+
+## 🧹 `opt_clean -purge` in Yosys
+
+The `opt_clean` pass in **Yosys** removes unused cells and wires after optimizations.  
+By default, it cleans **dangling wires and cells** that no longer affect the design.
+
+- **Basic `opt_clean`**  
+  Removes cells and wires that have no fanout or are otherwise unused.
+
+- **With `-purge` option**  
+  The `-purge` flag goes further:  
+  - It removes *all* unused wires (even module inputs/outputs if unconnected).  
+  - It deletes constant drivers, buffers, and any redundant connections.  
+  - Ensures the design has **no leftover logic** after optimizations.
+
+### 🔑 Usage
+```tcl
+opt_clean -purge
 ```
