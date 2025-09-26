@@ -59,8 +59,8 @@ To create a cleaner, more readable netlist, use the `-noattr` option:
 ```tcl
 write_verilog -noattr synthesized_design.v
 ```
--- This removes all synthesis attributes like (* keep *), (* full_case *), etc.
--- Improves readability and downstream compatibility.
+- This removes all synthesis attributes like (* keep *), (* full_case *), etc.
+- Improves readability and downstream compatibility.
 
 Labs : 
 
@@ -85,6 +85,8 @@ endmodule
 ![Alt text](Images/bad_mux.png)
 ![Alt text](Images/bad_mux_gls.png)
 
+---
+
 3. Labs on synth-sim mismatch for blocking statement
 blocking caveat
 code :
@@ -103,5 +105,6 @@ explainination
 ![Alt text](Images/blo_cav.png)
 ![Alt text](Images/blo_cav_net.png)
 ![Alt text](Images/blo_cav_gls.png)
+
 
 
