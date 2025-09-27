@@ -27,7 +27,7 @@ if we make counter. it needs
 
 in case no overlaping cases.
 
-Labs:
+2. Labs on "Incomplete If Case"
 incomplete if
 ```verilog
 module incomp_if (input i0 , input i1 , input i2 , output reg y);
@@ -61,3 +61,5 @@ waveform:
 ![](if2_gtk.png)
 synthsized netlist:
 ![](if2_net.png)
+
+3. Labs on "Incomplete overlapping Case"incomplete case:
