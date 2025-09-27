@@ -76,10 +76,10 @@ endmodule
 `y = (i0) ? i1 : (i2 ? i3 : y_previous)`
 
 **Waveform**:  
-![](if2_gtk.png)
+![](Images/if2_gtk.png)
 
 **Synthesized Netlist**:  
-![](if2_net.png)
+![](Images/if2_net.png)
 
 ---
 
@@ -382,6 +382,7 @@ GLS:
 | **MUX with For Loop (Lab)** | 4-input MUX using loop. | Latch due to uninitialized `y`. | Set `y = 0` before loop. |
 | **DEMUX with For Loop (Lab)** | DEMUX routes input to one of 8 outputs. | NA | Clean implementation with loop. |
 | **Ripple Carry Adder (RCA)** | 8-bit RCA using `for generate`. | NA | Clean, scalable hardware instantiation. |
+
 
 
 
