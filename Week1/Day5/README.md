@@ -212,8 +212,15 @@ endmodule
 ## 4. For Loop and For Generate
 - **For Loop**: Used in testbenches and behavioral RTL for repetitive tasks.
 - **For Generate**: Used for structural replication of hardware modules.
+How to use??
+Advantages ??
+usecase:
+mux
+demux
+ripple carry adder
 
 ---
 
 ## 5. Labs on For Loop and For Generate
 (Examples to be added in practical session.)
+
