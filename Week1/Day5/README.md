@@ -366,6 +366,21 @@ Netlist:
 GLS:
 ![](Images/rca_gls.png)
 
+## 📋 Summary - Day 5: Optimization in Synthesis
+
+| Topic | Description | Key Issues | Solution / Advantage |
+|-------|-------------|------------|-----------------------|
+| **If-Case Constructs** | `if` is used for priority logic, `case` for mutually exclusive conditions. | Incomplete conditions can infer **latches**. | Use `else` for `if`, and `default` for `case`. |
+| **Incomplete If (Lab)** | `if(i0) y = i1;` without `else`. | `y` retains old value → Latch inferred. | Add `else y = ...` or initialize output. |
+| **Incomplete If-Else (Lab)** | Missing final `else`. | Output undefined when none of the conditions match. | Use final `else` to avoid latch. |
+| **Incomplete Case (Lab)** | Case doesn't cover all `sel` values. | Unassigned outputs → Latch. | Add `default` case. |
+| **Partial Case Assignments** | Case assigns some but not all outputs. | Unassigned signal (e.g., `x`) → Latch. | Fully assign all outputs in all cases. |
+| **Overlapping Case** | Use of wildcard pattern like `2'b1?`. | Ambiguous behavior in synthesis. | Avoid overlapping patterns. Use specific matches. |
+| **For Loop** | Used in testbenches/behavioral RTL for repetition. | Risk of unintended latches if not initialized. | Simplifies repetitive logic; initialize variables properly. |
+| **For Generate** | Used to replicate hardware modules (e.g., full adders). | NA | Efficient for scalable designs like RCA. |
+| **MUX with For Loop (Lab)** | 4-input MUX using loop. | Latch due to uninitialized `y`. | Set `y = 0` before loop. |
+| **DEMUX with For Loop (Lab)** | DEMUX routes input to one of 8 outputs. | NA | Clean implementation with loop. |
+| **Ripple Carry Adder (RCA)** | 8-bit RCA using `for generate`. | NA | Clean, scalable hardware instantiation. |
 
 
 
