@@ -12,7 +12,7 @@ module bad_case (
       2'b01: y = i1;
       2'b10: y = i2;
       2'b1?: y = i3;
-     \\ 2'b11: y = i3;
+      //2'b11: y = i3;
     endcase
   end
 
