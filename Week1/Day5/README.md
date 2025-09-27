@@ -1,11 +1,12 @@
 # Day 5 - Optimization in Synthesis
 
 ## Table of Contents
-1. [If-Case Constructs](#1-if-case-constructs)
-2. [Labs on "Incomplete If Case"](2-labs-on-incomplete-if-case)
-3. [Labs on "Incomplete Overlapping Case"](3-labs-on-incomplete-overlapping-case)
-4. [For Loop and For Generate](#4-for-loop-and-for-generate)
-5. [Labs on "For Loop" and "For Generate"](5-labs-on-for-loop-and-for-generate)
+
+1. [If-Case Constructs](#1-if-case-constructs)  
+2. [Labs on "Incomplete If Case"](#2-labs-on-incomplete-if-case)  
+3. [Labs on "Incomplete Overlapping Case"](#3-labs-on-incomplete-overlapping-case)  
+4. [For Loop and For Generate](#4-for-loop-and-for-generate)  
+5. [Labs on "For Loop" and "For Generate"](#5-labs-on-for-loop-and-for-generate)
 
 ---
 
@@ -381,6 +382,7 @@ GLS:
 | **MUX with For Loop (Lab)** | 4-input MUX using loop. | Latch due to uninitialized `y`. | Set `y = 0` before loop. |
 | **DEMUX with For Loop (Lab)** | DEMUX routes input to one of 8 outputs. | NA | Clean implementation with loop. |
 | **Ripple Carry Adder (RCA)** | 8-bit RCA using `for generate`. | NA | Clean, scalable hardware instantiation. |
+
 
 
 
