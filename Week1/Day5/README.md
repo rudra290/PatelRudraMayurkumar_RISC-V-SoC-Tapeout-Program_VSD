@@ -1,11 +1,11 @@
 # Day 5 - Optimization in Synthesis
 
 ## Table of Contents
-[1. If-Case Constructs](#1-If-case-constructs)
-[2. Labs on "Incomplete If Case"](2-Labs-on-Incomplete-If-Case)
-[3. Labs on "Incomplete Overlapping Case"](3-Labs-on-Incomplete-Overlapping-Case)
-[4. For Loop and For Generate](4-For-Loop-and-For-Generate)
-[5. Labs on "For Loop" and "For Generate"](5-Labs-on-For-Loop-and-For-Generate)
+1. [If-Case Constructs](#1-if-case-constructs)
+2. [Labs on "Incomplete If Case"](2-labs-on-incomplete-if-case)
+3. [Labs on "Incomplete Overlapping Case"](3-labs-on-incomplete-overlapping-case)
+4. [For Loop and For Generate](#4-for-loop-and-for-generate)
+5. [Labs on "For Loop" and "For Generate"](5-labs-on-for-loop-and-for-generate)
 
 ---
 
@@ -365,6 +365,7 @@ Netlist:
 ![](Images/rca_net.png)
 GLS:
 ![](Images/rca_gls.png)
+
 
 
 
