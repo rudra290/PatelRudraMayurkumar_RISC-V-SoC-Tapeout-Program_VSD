@@ -1,4 +1,4 @@
-# [🖥️ RISC‑V Reference SoC Tapeout Program](https://www.vlsisystemdesign.com/rtl-design-using-verilog-with-sky130-technology/)
+# [🖥️ RISC‑V Reference SoC Tapeout Program](https://www.vlsisystemdesign.com/soc-labs/)
 
 Welcome to the **Sky130 RTL Workshop** 🚀 – a hands-on journey into Verilog RTL design, simulation, synthesis, and digital circuit optimization.  
 This repository is structured day-wise, with **labs, explanations, and code examples** for each topic.
