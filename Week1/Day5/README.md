@@ -1,11 +1,11 @@
 # Day 5 - Optimization in Synthesis
 
 ## Table of Contents
-1. [If-Case Constructs](#1-If-case-constructs)
-2. Labs on "Incomplete If Case"
-3. Labs on "Incomplete Overlapping Case"
-4. For Loop and For Generate
-5. Labs on "For Loop" and "For Generate"
+[1. If-Case Constructs](#1-If-case-constructs)
+[2. Labs on "Incomplete If Case"](2-Labs-on-"Incomplete-If-Case")
+[3. Labs on "Incomplete Overlapping Case"](3-Labs-on-"Incomplete-Overlapping-Case")
+[4. For Loop and For Generate](4-For-Loop-and-For-Generate)
+[5. Labs on "For Loop" and "For Generate"](5-Labs-on-"For-Loop"-and-"For Generate")
 
 ---
 
@@ -49,10 +49,10 @@ endmodule
 `y = (i0) ? i1 : y_previous`
 
 **Waveform**:  
-![](if1_gtk.png)
+![](Images/if1_gtk.png)
 
 **Synthesized Netlist**:  
-![](if1_net.png)
+![](Images/if1_net.png)
 
 ---
 
@@ -103,10 +103,10 @@ endmodule
 `y = (sel==2'b00)?i0 : (sel==2'b01)?i1 : y_previous`
 
 **Waveform**:  
-![](case1_gtk.png)
+![](Images/case1_gtk.png)
 
 **Synthesized Netlist**:  
-![](case1_net.png)
+![](Images/case1_net.png)
 
 ---
 
@@ -130,10 +130,10 @@ endmodule
 `y = (sel==2'b00)?i0 : (sel==2'b01)?i1 : i2`
 
 **Waveform**:  
-![](case2_gtk.png)
+![](Images/case2_gtk.png)
 
 **Synthesized Netlist**:  
-![](case2_net.png)
+![](Images/case2_net.png)
 
 ---
 
@@ -164,10 +164,10 @@ endmodule
 - `x = (sel==2'b00)?i2 : (sel==2'b01)?x_previous : i1`
 
 **Waveform**:  
-![](par_case_gtk.png)
+![](Images/par_case_gtk.png)
 
 **Synthesized Netlist**:  
-![](par_case_net.png)
+![](Images/par_case_net.png)
 
 ---
 
@@ -199,13 +199,13 @@ endmodule
 `y = (sel==2'b00)?i0 : (sel==2'b01)?i1 : (sel==2'b10)?i2 : i3`
 
 **Waveform**:  
-![](bad_case_gtk.png)
+![](Images/bad_case_gtk.png)
 
 **Synthesized Netlist**:  
-![](bas_case_net.png)
+![](Images/bas_case_net.png)
 
 **GLS Simulation**:  
-![](bad_case2_gtk.png)
+![](Images/bad_case2_gtk.png)
 
 ---
 
@@ -365,6 +365,7 @@ Netlist:
 ![](Images/rca_net.png)
 GLS:
 ![](Images/rca_gls.png)
+
 
 
 
