@@ -1,4 +1,4 @@
-# [🖥️ RTL Design & Synthesis Workshop – Sky130 PDK](https://www.vlsisystemdesign.com/rtl-design-using-verilog-with-sky130-technology/)
+# [🖥️ RISC‑V Reference SoC Tapeout Program](https://www.vlsisystemdesign.com/soc-labs/)
 
 Welcome to the **Sky130 RTL Workshop** 🚀 – a hands-on journey into Verilog RTL design, simulation, synthesis, and digital circuit optimization.  
 This repository is structured day-wise, with **labs, explanations, and code examples** for each topic.
@@ -44,7 +44,7 @@ This workshop is designed for **students, hobbyists, and engineers** who want to
 | **Day 2** | <a href="Day2" style="font-weight: bold; color: orange; text-decoration: none;">Timing Libraries, Synthesis Approaches, Flip-Flop Coding</a> | ✅ Completed |
 | **Day 3** | <a href="Day3" style="font-weight: bold; color: orange; text-decoration: none;">Combinational & Sequential Optimization</a> |  ✅ Completed |
 | **Day 4** | <a href="Day4" style="font-weight: bold; color: orange; text-decoration: none;">Gate-Level Simulation (GLS), Blocking vs. Non-Blocking, Mismatch</a> | ✅ Completed |
-| **Day 5** | Optimization in Synthesis | ⏳ In Progress (Lectures done, labs pending) |
+| **Day 5** | <a href="Day5" style="font-weight: bold; color: orange; text-decoration: none;">Optimization in Synthesis</a> | ✅ Completed  |
 
 ---
 

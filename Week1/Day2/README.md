@@ -69,7 +69,11 @@ In **flat synthesis**, the hierarchy is dissolved into one large module for glob
 - ✅ Enables **global optimization** across entire design  
 - ❌ Slower compilation (entire design re-synthesized)  
 - ❌ Harder debugging (loss of hierarchy)  
-- ✅ Good for **smaller or performance-critical designs**  
+- ✅ Good for **smaller or performance-critical designs**
+
+#### The `flatten` Command in Yosys
+- The `flatten` command in Yosys collapses your design's hierarchy into a single, non-hierarchical netlist.
+- You run it by typing `flatten` in a script or at the prompt. It is a key synthesis step used before the `abc` command to enable powerful, global logic optimizations across the entire circuit.
 
 ![Alt Text](Images/Flat.png)  
 
@@ -160,6 +164,7 @@ Instead of costly multiplication, replicate bits to form result aa.
 - Flat synthesis provides global optimization but at the cost of compilation time and debug complexity.
 - Efficient flop coding ensures stability and synchronization, with reset strategy tailored to design.
 - Optimization tricks (like replacing multipliers with shifts) help save area and improve performance.
+
 
 
 
