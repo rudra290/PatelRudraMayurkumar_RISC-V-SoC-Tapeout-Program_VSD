@@ -8,7 +8,8 @@ A key feature of this guide is the introduction to VSDBabySoC, a simplified, ope
 ---
 ## Table of Contents
 <details>
-<summary><strong>1. Understanding System on a Chip (SoC)</strong></summary>
+<summary><strong>
+   1. Understanding System on a Chip (SoC)</strong></summary>
 
 A **System on Chip (SoC)** is a single integrated circuit (IC) that combines multiple system components into one chip. It provides the computational power of a traditional computer or embedded system in a compact, power-efficient, and scalable form.
 
@@ -169,21 +170,6 @@ flowchart TD
 <details>
 <summary><strong>3. Introduction to VSDBabySoC</strong></summary>
 
-3.1 Objectives of VSDBabySoC
-
-3.2 Features of VSDBabySoC
-
-3.3 Block Diagram of VSDBabySoC
-
-3.4 Comparison: VSDBabySoC vs Commercial SoCs
-
-3.5 Complexity vs Application Graph
-
-</details>
-
-
-## 3. Introduction to VSDBabySoC
-
 The **VSDBabySoC** is a simplified, open-source educational System on Chip (SoC) project created to help students and enthusiasts understand the **fundamentals of SoC design**. Unlike commercial SoCs that are highly complex and closed-source, VSDBabySoC is designed for **learning, experimentation, and research**.  
 
 It is built using a **RISC-V based processor core** and a few basic peripherals, keeping the design minimal while still demonstrating the **core concepts of integration, verification, and SoC bring-up**.
@@ -288,6 +274,12 @@ graph LR
     style A fill:#9ff,stroke:#333,stroke-width:1px
     style E fill:#f99,stroke:#333,stroke-width:1px
 ```
+
+
+</details>
+
+
+
 
 
 
