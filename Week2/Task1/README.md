@@ -76,7 +76,7 @@ The design and fabrication of an SoC follow a **systematic process** from specif
 flowchart TD
     A[System Specification] --> B[Architecture Design]
     B --> C[IP Selection & Integration]
-    C --> D[RTL Design (HDL Coding)]
+    C --> D[RTL Design (HDL Coding)] D
     D --> E[Functional Verification]
     E --> F[Logic Synthesis]
     F --> G[Design-for-Test (DFT) Insertion]
@@ -261,5 +261,6 @@ graph LR
     style A fill:#9ff,stroke:#333,stroke-width:1px
     style E fill:#f99,stroke:#333,stroke-width:1px
 ```
+
 
 
