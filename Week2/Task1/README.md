@@ -1,8 +1,46 @@
 # Fundamentals of System on Chip (SoC) Design
+Welcome to the repository for "Fundamentals of System on Chip (SoC) Design." This document serves as a comprehensive introduction to the world of SoCs, covering everything from the basic definition and core components to the complex design flows used in the industry.
+
+Whether you're a student, an enthusiast, or a professional looking to refresh your knowledge, this guide will walk you through the key differences between SoCs, microcontrollers, and microprocessors. It also explores the various types of SoCs and their real-world applications.
+
+A key feature of this guide is the introduction to VSDBabySoC, a simplified, open-source educational SoC. It is used as a practical example to demystify the SoC design process, demonstrating how a CPU, memory, and peripherals are integrated into a single, functional system using open-source tools.
 
 ---
+## Table of Contents
+<details>
+<summary><strong>1. Understanding System on a Chip (SoC)</strong></summary>
 
-## 1. Understanding System on a Chip (SoC)
+Why SoC instead of MCU or Microprocessor?
+
+Key Differences: SoC vs Microcontroller vs Microprocessor
+
+Real-World Applications of SoC
+
+</details>
+
+<details>
+<summary><strong>2. Types of SoCs and SoC Design Flow</strong></summary>
+
+SoC Design & Manufacturing Flow
+
+Explanation of Each Step
+
+</details>
+
+<details>
+<summary><strong>3. Introduction to VSDBabySoC</strong></summary>
+
+3.1 Objectives of VSDBabySoC
+
+3.2 Features of VSDBabySoC
+
+3.3 Block Diagram of VSDBabySoC
+
+3.4 Comparison: VSDBabySoC vs Commercial SoCs
+
+3.5 Complexity vs Application Graph
+
+</details>
 
 A **System on Chip (SoC)** is a single integrated circuit (IC) that combines multiple system components into one chip.  
 It provides the computational power of a traditional computer or embedded system in a compact, power-efficient, and scalable form.
@@ -260,6 +298,7 @@ graph LR
     style A fill:#9ff,stroke:#333,stroke-width:1px
     style E fill:#f99,stroke:#333,stroke-width:1px
 ```
+
 
 
 
