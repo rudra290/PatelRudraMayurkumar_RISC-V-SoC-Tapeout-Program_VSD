@@ -87,15 +87,15 @@ The design and fabrication of an SoC follow a **systematic process** from specif
 graph TD;
     A[System Specification] --> B[Architecture Design];
     B --> C[IP Selection & Integration];
-    C --> D[RTL Design (HDL Coding)];
+    C --> D[RTL Design HDL Coding];
     D --> E[Functional Verification];
     E --> F[Logic Synthesis];
-    F --> G[Design-for-Test (DFT) Insertion];
-    G --> H[Place & Route (Physical Design)];
+    F --> G[Design for Test Insertion];
+    G --> H[Place & Route Physical Design];
     H --> I[Timing Analysis & Verification];
-    I --> J[Signoff Checks (Power, IR-drop, EM, LVS/DRC)];
+    I --> J[Signoff Checks Power, IR-drop, EM, LVS/DRC];
     J --> K[Tape-out];
-    K --> L[Fabrication (Wafer Processing)];
+    K --> L[Fabrication Wafer Processing];
     L --> M[Packaging & Testing];
     M --> N[Mass Production & Deployment];
 ```
@@ -278,6 +278,19 @@ graph LR
 
 </details>
 
+## Conclusion & Summary
+
+This repository has provided a comprehensive journey through the **Fundamentals of System on Chip (SoC) Design**. From foundational theories to the practicalities of the design lifecycle, the goal has been to demystify the complex world of integrated circuits.
+
+### Key Takeaways
+
+* You have learned the core distinctions between **SoCs, MCUs, and Microprocessors**, understanding the unique advantages of system integration.
+* You have walked through the entire **SoC design and manufacturing flow**, from the initial system specification and RTL coding to the final tape-out.
+* You have been introduced to **VSDBabySoC**, a practical, open-source **RISC-V** project that helps bridge the gap between theory and real-world application.
+
+> The rise of open-source hardware, particularly the **RISC-V ISA**, and accessible EDA tools has made SoC design more achievable than ever. The concepts and workflows presented here are the building blocks for future innovation in this exciting field.
+
+We hope this guide serves as a valuable starting point for your continued exploration and experimentation in the world of VLSI and digital design.
 
 
 
