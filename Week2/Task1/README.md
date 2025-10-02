@@ -87,7 +87,6 @@ flowchart TD
     K --> L[Fabrication (Wafer Processing)]
     L --> M[Packaging & Testing]
     M --> N[Mass Production & Deployment]
-
 ```
 ### Explanation of Each Step
 
@@ -261,6 +260,7 @@ graph LR
     style A fill:#9ff,stroke:#333,stroke-width:1px
     style E fill:#f99,stroke:#333,stroke-width:1px
 ```
+
 
 
 
