@@ -290,7 +290,8 @@ This repository has provided a comprehensive journey through the **Fundamentals 
 
 > The rise of open-source hardware, particularly the **RISC-V ISA**, and accessible EDA tools has made SoC design more achievable than ever. The concepts and workflows presented here are the building blocks for future innovation in this exciting field.
 
-We hope this guide serves as a valuable starting point for your continued exploration and experimentation in the world of VLSI and digital design.
+I hope this guide serves as a valuable starting point for your continued exploration and experimentation in the world of VLSI and digital design.
+
 
 
 
