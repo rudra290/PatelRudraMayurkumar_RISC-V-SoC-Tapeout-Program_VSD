@@ -84,19 +84,20 @@ The design and fabrication of an SoC follow a **systematic process** from specif
 #### Flowchart: SoC Design & Manufacturing Process
 
 ```mermaid
-    A[System Specification] --> B[Architecture Design]
-    B --> C[IP Selection & Integration]
-    C --> D[RTL Design (HDL Coding)]
-    D --> E[Functional Verification]
-    E --> F[Logic Synthesis]
-    F --> G[Design-for-Test (DFT) Insertion]
-    G --> H[Place & Route (Physical Design)]
-    H --> I[Timing Analysis & Verification]
-    I --> J[Signoff Checks (Power, IR-drop, EM, LVS/DRC)]
-    J --> K[Tape-out]
-    K --> L[Fabrication (Wafer Processing)]
-    L --> M[Packaging & Testing]
-    M --> N[Mass Production & Deployment]
+graph TD;
+    A[System Specification] --> B[Architecture Design];
+    B --> C[IP Selection & Integration];
+    C --> D[RTL Design (HDL Coding)];
+    D --> E[Functional Verification];
+    E --> F[Logic Synthesis];
+    F --> G[Design-for-Test (DFT) Insertion];
+    G --> H[Place & Route (Physical Design)];
+    H --> I[Timing Analysis & Verification];
+    I --> J[Signoff Checks (Power, IR-drop, EM, LVS/DRC)];
+    J --> K[Tape-out];
+    K --> L[Fabrication (Wafer Processing)];
+    L --> M[Packaging & Testing];
+    M --> N[Mass Production & Deployment];
 ```
 ### Explanation of Each Step
 
@@ -276,6 +277,7 @@ graph LR
 
 
 </details>
+
 
 
 
