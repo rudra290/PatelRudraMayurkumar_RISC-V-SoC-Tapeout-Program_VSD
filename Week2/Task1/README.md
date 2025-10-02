@@ -84,8 +84,7 @@ The design and fabrication of an SoC follow a **systematic process** from specif
 #### Flowchart: SoC Design & Manufacturing Process
 
 ```mermaid
-flowchart TD
-   A[System Specification] --> B[Architecture Design]
+    A[System Specification] --> B[Architecture Design]
     B --> C[IP Selection & Integration]
     C --> D[RTL Design (HDL Coding)]
     D --> E[Functional Verification]
@@ -277,6 +276,7 @@ graph LR
 
 
 </details>
+
 
 
 
