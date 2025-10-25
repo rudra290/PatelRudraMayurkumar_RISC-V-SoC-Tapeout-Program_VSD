@@ -20,9 +20,17 @@ This repository documents the installation of essential tools required for Veril
 Icarus Verilog is a lightweight Verilog simulation and synthesis tool. It generates simulation output that can be visualized using GTKWave.  
 
 #### Installation  
+
+#### Ubuntu:
 ```bash
 sudo apt update
 sudo apt install iverilog gtkwave
+
+```
+#### Fedora:
+```bash
+sudo dnf update
+sudo dnf install iverilog gtkwave
 
 ```
 
